@@ -1,0 +1,30 @@
+Paracetamol;Medicamentos;Analgésicos;5990;1
+Ibuprofeno;Medicamentos;Analgésicos;7500;2
+Aspirina;Medicamentos;Analgésicos;4250;3
+Vitamina C;Medicamentos;Vitaminas;8990;4
+Vitamina D;Medicamentos;Vitaminas;12500;5
+Complejo B;Medicamentos;Vitaminas;9750;6
+Crema hidratante;Cuidado Personal;Cuidado de la piel;15990;7
+Protector solar SPF 50;Cuidado Personal;Cuidado de la piel;12990;8
+Jabón corporal;Cuidado Personal;Cuidado de la piel;6490;9
+Pasta de dientes;Cuidado Personal;Higiene Oral;3490;10
+Enjuague bucal;Cuidado Personal;Higiene Oral;5750;11
+Cepillo de dientes;Cuidado Personal;Higiene Oral;2990;12
+Vendaje adhesivo;Primeros Auxilios;Botiquín;6250;13
+Alcohol desinfectante;Primeros Auxilios;Botiquín;4990;14
+Gasas estériles;Primeros Auxilios;Botiquín;3750;15
+Solución de yodo;Primeros Auxilios;Antisépticos;7500;16
+Pomada antibiótica;Primeros Auxilios;Antisépticos;9250;17
+Alcohol isopropílico;Primeros Auxilios;Antisépticos;5990;18
+Crema antiarrugas;Dermocosmética;Cremas faciales;19990;19
+Sérum revitalizante;Dermocosmética;Cremas faciales;24500;20
+Protector solar FPS 30;Dermocosmética;Protección solar;11990;21
+Aceite bronceador;Dermocosmética;Protección solar;14750;22
+Champú reparador;Dermocosmética;Cuidado capilar;8490;23
+Acondicionador nutritivo;Dermocosmética;Cuidado capilar;10750;24
+Omega-3 cápsulas;Salud y Bienestar;Suplementos;16990;25
+Calcio masticable;Salud y Bienestar;Suplementos;13250;26
+Multivitamínico;Salud y Bienestar;Suplementos;11490;27
+Té de hierbas relajante;Salud y Bienestar;Bienestar General;4990;28
+Aceite esencial lavanda;Salud y Bienestar;Bienestar General;8750;29
+Vitaminas para el sueño;Salud y Bienestar;Bienestar General;9990;30
