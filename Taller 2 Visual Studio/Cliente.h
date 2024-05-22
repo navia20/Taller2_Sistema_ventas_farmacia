@@ -21,6 +21,5 @@ public:
     void setEmbarazada (bool embarazada_);
     //Metodos de verificacion
     bool isDiscapacitado ();
-    bool isEmbarazada ();
-    
+    bool isEmbarazada (); 
 };

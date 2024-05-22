@@ -1,16 +1,13 @@
 #include <queue>
 #include "Cliente.cpp"
 #pragma once
-
 enum TipoCliente {NORMAL, PREFERENCIAL};
-
 class ColaClientes {
 private:
     queue<Cliente*> clientesNormales;
     queue<Cliente*> clientesPreferencialesTerceraEdad;
     queue<Cliente*> clientesPreferencialesDiscapacidad;
     queue<Cliente*> clientesPreferencialesEmbarazadas;
-
 public:
     //Constructor
     ColaClientes();

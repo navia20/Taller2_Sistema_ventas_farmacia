@@ -126,8 +126,7 @@ string ListaProductos::convertirTexto() {
                 texto <<endl;
             }
         } while (reco != raiz);
-    }
-    
+    }   
     return texto.str();
 }
 
@@ -168,7 +167,5 @@ int ListaProductos::calcularTotal() {
             reco = reco->sig;
         } while (reco != raiz);
     }
-
     return total;
 }
-

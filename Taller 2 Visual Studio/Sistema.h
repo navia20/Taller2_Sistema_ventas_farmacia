@@ -34,7 +34,6 @@ class Sistema{
         * @param colaClientes Puntero a la cola de clientes donde se agregar el nuevo cliente
         */
         void llamarCliente(ColaClientes* colaClientes,ListaProductos* listaProductos);
-        
     public:
         //Constructor
         Sistema();
@@ -43,5 +42,4 @@ class Sistema{
         * @param Sistema* Donde se guardan los datos
         */
         void menu(Sistema* sistema);
-    
 };

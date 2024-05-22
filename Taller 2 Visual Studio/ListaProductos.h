@@ -2,7 +2,7 @@
 #pragma once
 #include "Producto.cpp"
 using namespace std;
-
+//Se utilizo la estructura de lista circular doble para la lista de productos.
 class ListaProductos {
 private:
     class NodoP {
@@ -10,7 +10,6 @@ private:
         Producto* producto;
         NodoP *sig;
         NodoP *ant;
-    
     };
     NodoP *raiz;
 public:
@@ -68,5 +67,4 @@ public:
     * @return Total de la suma de precios de todos los productos en la lista.
     */
     int calcularTotal();
-    
 };

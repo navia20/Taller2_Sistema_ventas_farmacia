@@ -47,6 +47,7 @@ void Producto::setPrecio(int nuevoPrecio) {
 void Producto::setId(int nuevoId) {
     this->id = nuevoId;
 }
+
 void Producto::imprimir(){
         cout << "Nombre: " << nombre << endl;
         cout << "Categoría: " << categoria << endl;

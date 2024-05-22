@@ -110,7 +110,7 @@ void Sistema::agregarProducto(ListaProductos* listaProductos){
         if (!(cin >> precio)) {
             cin.clear();  
             cin.ignore(numeric_limits<streamsize>::max(), '\n');
-            cout << "Error, Ingrese un valor numérico valido para el precio." << endl;
+            cout << "Error, Ingrese un valor numerico valido para el precio." << endl;
         } else {
             break;
         }
@@ -182,7 +182,7 @@ void Sistema::agregarClienteCola(ColaClientes* colaClientes) {
             while (!(cin >> tipoPreferencial) || (tipoPreferencial != 1 && tipoPreferencial != 2)) {
                 cin.clear(); 
                 cin.ignore(numeric_limits<streamsize>::max(), '\n'); 
-                cout << "Error: Seleccione una opción valida (1 para Discapacidad, 2 para Embarazada): ";
+                cout << "Error: Seleccione una opcion valida (1 para Discapacidad, 2 para Embarazada): ";
             }
             if (tipoPreferencial == 1) {
                 esDiscapacitado = true;
@@ -222,7 +222,14 @@ void Sistema::llamarCliente(ColaClientes* colaClientes, ListaProductos* listaPro
     int idProducto = -1;
     while (idProducto != 0) {
         cout << "Ingrese el ID del producto que desea comprar (0 para finalizar): ";
-        cin >> idProducto;
+        while (!(cin >> idProducto)) {
+            cin.clear();
+            cin.ignore(numeric_limits<streamsize>::max(), '\n');
+            cout << "Error: Ingrese un valor numérico válido para el ID del producto." << endl;
+        }
+        if (idProducto == 0) {
+            break;
+        }
         Producto* producto = listaProductos->buscarProducto(idProducto);
 
         if (producto == nullptr) {
@@ -242,32 +249,42 @@ void Sistema::llamarCliente(ColaClientes* colaClientes, ListaProductos* listaPro
         cout<<"Total a pagar: $"<<productosSeleccionados->calcularTotal()<<endl;
         cout<<"Metodo de pago:"<<endl;
         cout<<"1) Efectivo | 2) Tarjeta Debito/Credito | 3) Transferencia | 4) Cheque"<<endl;
+        while (!(cin >> option)) {
+            cin.clear();
+            cin.ignore(numeric_limits<streamsize>::max(), '\n');
+            cout << "Error: Ingrese un valor numerico valido para la opcion de pago." << endl;
+        }
         bool entradaValida = false;
         while (!entradaValida) {
-            cout << "Ingrese una opcion: ";
-            if (!(cin >> option)) {
-                cin.clear(); 
-                cin.ignore(numeric_limits<streamsize>::max(), '\n'); 
-                cout << "Error: Ingrese un valor numerico valido." << endl;
-            } else if (option < 0 || option > 100) {
+            if (option < 1 || option > 4) {
                 cout << "Error: Seleccione una opcion valida." << endl;
+                cout << "Ingrese una opcion: ";
+                while (!(cin >> option)) {
+                    cin.clear();
+                    cin.ignore(numeric_limits<streamsize>::max(), '\n');
+                    cout << "Error: Ingrese un valor numerico valido para la opcion de pago." << endl;
+                }
             } else {
-                entradaValida = true; 
+                entradaValida = true;
             }
-            cout << "Pago exitoso." << endl;
-            int opcion;
-            cout << "¿Llamar siguiente cliente?" << endl;
-            cout << "1. Sí              0. No" << endl;
-            cout << "Ingrese su opcion (0 para No, 1 para Si): ";
-            cin >> opcion;
-            if (opcion == 1) {
-                cout << "Llamando al siguiente cliente..." << endl;
-                llamarCliente(colaClientes,listaProductos);
-            } else if (opcion == 0) {
-                cout<<"Cargando menu..."<<endl;
-            } else {
-                cout << "Opción invalida. Volviendo al menu..." << endl;
-            }
+        }
+        cout << "Pago exitoso." << endl;
+        int opcion;
+        cout << "¿Llamar siguiente cliente?" << endl;
+        cout << "1. Si              0. No" << endl;
+        cout << "Ingrese su opcion (0 para No, 1 para Si): ";
+        while (!(cin >> opcion)) {
+            cin.clear();
+            cin.ignore(numeric_limits<streamsize>::max(), '\n');
+            cout << "Error: Ingrese un valor numerico valido para la opcion." << endl;
+        }
+        if (opcion == 1) {
+            cout << "Llamando al siguiente cliente..." << endl;
+            llamarCliente(colaClientes,listaProductos);
+        } else if (opcion == 0) {
+            cout<<"Cargando menu..."<<endl;
+        } else {
+            cout << "Opción invalida. Volviendo al menu..." << endl;
         }
     } 
 } 
