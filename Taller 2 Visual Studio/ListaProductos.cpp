@@ -56,22 +56,32 @@ bool ListaProductos::vacia() {
 }
 
 void ListaProductos::imprimir() {
+    NodoP* nodo = raiz;
+    string categoriaActual = "";
+    string subcategoriaActual = "";
+    int productosImpresos = 0;
     if (!vacia()) {
-        NodoP *reco = raiz;
-        cout <<"ID    Producto    Categoria    Subcategoria    Precio"<< endl;
-        cout <<"---------------------------------------------------------"<<endl;
+
         do {
-            cout <<reco->producto->getId();
-            cout <<"  "<< reco->producto->getNombre();
-            cout <<"  "<< reco->producto->getCategoria();
-            cout <<"  "<< reco->producto->getSubcategoria();
-            cout <<"  $"<< reco->producto->getPrecio()<<endl;
-            reco = reco->sig;
-        } while (reco != raiz);
-        cout << "\n";
+            // Verificar si la categoría del producto actual es diferente a la categoría anterior
+            if (nodo->producto->getCategoria() != categoriaActual) {
+                categoriaActual = nodo->producto->getCategoria();
+                cout << categoriaActual << endl;
+            }
+            // Verificar si la subcategoría del producto actual es diferente a la subcategoría anterior
+            if (nodo->producto->getSubcategoria() != subcategoriaActual) {
+                subcategoriaActual = nodo->producto->getSubcategoria();
+                cout << "  " << subcategoriaActual << endl;
+            }
+
+            cout << "    " << nodo->producto->getId() << ". " << nodo->producto->getNombre() << " $" << nodo->producto->getPrecio() << endl;
+            productosImpresos++;
+
+
+            nodo = nodo->sig;
+        } while (productosImpresos < cantidad());
     }
 }
-
 int ListaProductos::cantidad() {
     int cant = 0;
     if (!vacia()) {
@@ -84,33 +94,6 @@ int ListaProductos::cantidad() {
     return cant;
 }
 
-void ListaProductos::borrar(int pos) {
-    if (pos <= cantidad()) {
-        if (pos == 1) {
-            if (cantidad() == 1) {
-                delete raiz;
-                raiz = NULL;
-            } else {
-                NodoP *bor = raiz;
-                NodoP *ultimo = raiz->ant;
-                raiz = raiz->sig;
-                ultimo->sig = raiz;
-                raiz->ant = ultimo;
-                delete bor;
-            }
-        } else {
-            NodoP *reco = raiz;
-            for (int f = 1; f <= pos - 1; f++)
-                reco = reco->sig;
-            NodoP *bor = reco;
-            NodoP *anterior = reco->ant;
-            reco = reco->sig;
-            anterior->sig = reco;
-            reco->ant = anterior;
-            delete bor;
-        }
-    }
-}
 
 string ListaProductos::convertirTexto() {
     ostringstream texto;

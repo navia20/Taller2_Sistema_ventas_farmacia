@@ -36,21 +36,16 @@ public:
     * Metodo para imprimir todos los productos en la lista
     */
     void imprimir();
+    void NewFunction(ListaProductos::NodoP *&nodo, std::string &subcategoriaActual, std::string &categoriaActual, int &productosImpresos, ListaProductos::NodoP *nodoInicial);
     /**
-    * Metodo para obtener la cantidad de productos en la lista
-    * @return Cantidad de productos en la lista.
-    */
+     * Metodo para obtener la cantidad de productos en la lista
+     * @return Cantidad de productos en la lista.
+     */
     int cantidad();
     /**
-    * Metodo para borrar un producto de la lista en una posición específica
-    * @param pos Posición del producto que se desea borrar (comenzando desde 0)
-    * 
-    */
-    void borrar(int pos);
-    /**
-    * Metodo para convertir la lista de productos a formato de texto
-    * @return Cadena de texto con la representación de la lista de productos
-    */
+     * Metodo para convertir la lista de productos a formato de texto
+     * @return Cadena de texto con la representación de la lista de productos
+     */
     string convertirTexto();
     /**
     * Metodo para desplegar por consola el catalogo/lista de los productos que hay

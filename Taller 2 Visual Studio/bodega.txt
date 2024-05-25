@@ -19,7 +19,7 @@ Clorhexidina;Primeros Auxilios;Antisepticos;5990;18
 Crema antiarrugas;Dermocosmetica;Cremas faciales;19990;19
 Serum revitalizante;Dermocosmetica;Cremas faciales;24500;20
 Protector solar FPS 30;Dermocosmetica;Proteccion solar;11990;21
-Aceite bronceador;Dermocosmetica;Protección solar;14750;22
+Aceite bronceador;Dermocosmetica;Proteccion solar;14750;22
 Shampoo reparador;Dermocosmetica;Cuidado capilar;8490;23
 Acondicionador nutritivo;Dermocosmetica;Cuidado capilar;10750;24
 Omega-3 cápsulas;Salud y Bienestar;Suplementos;16990;25
